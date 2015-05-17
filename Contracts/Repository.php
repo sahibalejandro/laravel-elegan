@@ -6,11 +6,11 @@
 namespace Sahib\Elegan\Contracts;
 
 /**
- * Interface RepositoryInterface
+ * Interface Repository
  *
  * @package Sahib\Elegan\Contracts
  */
-interface RepositoryInterface
+interface Repository
 {
     /**
      * Get all records.
@@ -121,8 +121,8 @@ interface RepositoryInterface
     /**
      * Push a criteria into the query.
      *
-     * @param \Sahib\Elegan\Contracts\CriteriaInterface $criteria
+     * @param \Sahib\Elegan\Contracts\Criteria $criteria
      * @return mixed
      */
-    public function criteria(CriteriaInterface $criteria);
+    public function criteria(Criteria $criteria);
 }

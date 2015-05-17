@@ -1,10 +1,10 @@
 <?php namespace Sahib\Elegan\Repositories;
 
 use Illuminate\Database\Eloquent\Builder;
-use Sahib\Elegan\Contracts\CriteriaInterface;
-use Sahib\Elegan\Contracts\RepositoryInterface;
+use Sahib\Elegan\Contracts\Criteria;
+use Sahib\Elegan\Contracts\Repository as RepositoryContract;
 
-abstract class Repository implements RepositoryInterface
+abstract class Repository implements RepositoryContract
 {
 
     /**
@@ -176,10 +176,10 @@ abstract class Repository implements RepositoryInterface
     /**
      * Push a criteria into the query.
      *
-     * @param \Sahib\Elegan\Contracts\CriteriaInterface $criteria
+     * @param \Sahib\Elegan\Contracts\Criteria $criteria
      * @return mixed
      */
-    public function criteria(CriteriaInterface $criteria)
+    public function criteria(Criteria $criteria)
     {
         $this->criteria[] = $criteria;
     }

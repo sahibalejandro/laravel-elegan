@@ -5,7 +5,7 @@
  *
  * @package Sahib\Elegan\Contracts
  */
-interface CriteriaInterface
+interface Criteria
 {
     /**
      * Apply a criteria to the query.
