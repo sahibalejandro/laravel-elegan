@@ -1,4 +1,4 @@
-<?php namespace Sahib\Elegan\Repositories;
+<?php namespace Sahib\Elegan\Repositories\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder;
 use Sahib\Elegan\Contracts\Criteria;

@@ -2,9 +2,20 @@
     "name": "sahib/elegan",
     "description": "Tool to help developers build backend panels.",
     "require": {
+        "php": ">=5.4.0",
         "illuminate/database": "5.0.*",
         "illuminate/support": "5.0.*",
-        "illuminate/routing": "5.0.*"
+        "illuminate/routing": "5.0.*",
+        "laravelcollective/html": "5.0.*"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.0",
+        "mockery/mockery": "^0.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sahib\\Elegan\\": "src"
+        }
     },
     "license": "MIT",
     "authors": [
