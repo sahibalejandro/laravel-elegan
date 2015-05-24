@@ -40,19 +40,20 @@ class UploaderTest extends \Codeception\TestCase\Test
         $file = Mockery::mock('\Symfony\Component\HttpFoundation\File\UploadedFile');
 
         // The uploaded file should receive the following methods calls:
-        // First, to get the client original name.
+        // To get the client original name.
         $file->shouldReceive('getClientOriginalName')->andReturn($filename)->once();
-        // Second, to move the file to the destination directory.
+        // To move the file to the destination directory.
         $file->shouldReceive('move')->with($config['image']['path'], $filename)->once();
 
-        // The request should receive the followin methods calls:
-        // to check there is a file in the request.
+        // The request should receive the following methods calls:
+        // To check if there is a uploaded file in the request.
         $request->shouldReceive('hasFile')->andReturn(true)->once();
-        // to get the uploaded file.
+        // To get the uploaded file.
         $request->shouldReceive('file')->andReturn($file)->once();
-        // to merge the new input into the request.
+        // To merge the new input into the request.
         $request->shouldReceive('merge')->with($newRequestInput)->once();
 
+        // Now test the method and then assert.
         $uploader = new Uploader(new FileName());
         $input = $uploader->moveFiles($request, $config);
 

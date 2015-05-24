@@ -30,6 +30,9 @@ class FileNameTest extends \Codeception\TestCase\Test
         $fileParts = $this->fileName->split('foo-bar.jpg');
         $this->assertEquals(['foo-bar', 'jpg'], $fileParts);
 
+        $fileParts = $this->fileName->split('foo-bar.baz.jpg');
+        $this->assertEquals(['foo-bar.baz', 'jpg'], $fileParts);
+
         // File name without extension.
         $fileParts = $this->fileName->split('foo-bar');
         $this->assertEquals(['foo-bar', ''], $fileParts);
